@@ -6,10 +6,10 @@ authors:
   - family-names: Abaei
     given-names: Shayan
   - family-names: Alimardani
-    given-names: Hossein
+    given-names: Hosein
   - family-names: Asgari
     given-names: Mehrdad
-repository-code: "https://github.com/ShayanAbaei/mof-benchmark-maturity"
+repository-code: "https://github.com/Asgari-research/mof-ml-benchmark-maturity"
 license: MIT
 abstract: "Reproducible benchmarking workflow for studying when MOF machine-learning benchmark conclusions become stable as a function of training data volume."
 keywords:
