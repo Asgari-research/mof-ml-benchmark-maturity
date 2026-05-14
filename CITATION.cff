@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated manuscript, this repository, and the original ARC-MOF data resources."
+title: "MOF Benchmark Maturity"
+type: software
+authors:
+  - family-names: Abaei
+    given-names: Shayan
+  - family-names: Alimardani
+    given-names: Hossein
+  - family-names: Asgari
+    given-names: Mehrdad
+repository-code: "https://github.com/ShayanAbaei/mof-benchmark-maturity"
+license: MIT
+abstract: "Reproducible benchmarking workflow for studying when MOF machine-learning benchmark conclusions become stable as a function of training data volume."
+keywords:
+  - metal-organic frameworks
+  - machine learning
+  - benchmark maturity
+  - adsorption
+  - descriptor sufficiency
+  - reproducibility
+  - materials informatics
