@@ -4,7 +4,7 @@ Code companion repository for the manuscript:
 
 **Benchmark Maturity in MOF Machine Learning: When Do Conclusions Become Scientifically Reliable?**
 
-This repository contains the reproducibility files for a benchmark-maturity study in metal–organic framework (MOF) machine learning. The project asks when a MOF benchmark becomes large enough to support stable scientific conclusions rather than only competitive numerical scores.
+This repository contains the reproducibility files for a benchmark-maturity study in metal–organic framework (MOF) machine learning. The project asks when a MOF benchmark becomes stable enough to support scientific conclusions rather than only competitive numerical scores.
 
 The workflow evaluates how benchmark conclusions change as training data volume increases. It uses a fixed external test set, nested training subsets, repeated retraining, lightweight descriptor families, and multiple stability diagnostics.
 
