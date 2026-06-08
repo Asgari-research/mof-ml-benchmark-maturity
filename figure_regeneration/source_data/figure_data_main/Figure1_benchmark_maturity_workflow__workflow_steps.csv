@@ -1,0 +1,6 @@
+step_order,box_label,role
+1,Load clean_data.csv,Input data loading
+2,Choose main target and fixed external test set,Problem definition and held-out evaluation
+3,Build nested training subsamples (n = 500 ... full),Sample-size design
+4,Train repeated model/descriptor combinations,Repeated benchmark execution
+5,"Quantify performance, uncertainty, stability",Post-processing and scientific conclusions
