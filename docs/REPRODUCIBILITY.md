@@ -104,4 +104,19 @@ small_data_mof_benchmark_outputs/final_exports/project_summary.txt
 small_data_mof_benchmark_outputs/final_exports/project_summary.json
 ```
 
+### `docs/REPRODUCIBILITY.md`
+
+Add:
+
+```markdown
+## Figure-only reproduction
+
+To reproduce only the final manuscript and Supporting Information figures, without rerunning model training:
+
+```bash
+python figure_regeneration/draw_all_figures.py
+
 Also inspect the core machine-readable outputs listed in `docs/OUTPUTS.md`.
+
+
+
