@@ -163,6 +163,38 @@ This folder contains logs, processed tables, job checkpoints, prediction files, 
 
 Generated outputs are intentionally excluded from Git tracking because they can be recreated from the code and local input files.
 
+
+
+## Figure regeneration package
+
+In addition to the full benchmark pipeline, this repository includes a lightweight figure-regeneration package:
+
+```text
+figure_regeneration/
+```
+
+This folder contains the source CSV files, plotting script, and regenerated PDF/PNG figures used for the final manuscript and Supporting Information. It is intended for figure-level reproducibility and manuscript auditing. Running this script does not require the full benchmark input table and does not retrain any models.
+
+To regenerate the publication figures:
+
+```bash
+python figure_regeneration/draw_all_figures.py
+```
+
+The script reads figure-level CSV files from:
+
+```text
+figure_regeneration/source_data/
+```
+
+and writes regenerated figures to:
+
+```text
+figure_regeneration/redrawn_figures/
+```
+
+These figure-level CSV files are included because they provide the numerical audit trail for the published figures without redistributing the underlying ARC--MOF-derived benchmark table.
+
 ## Key generated files
 
 Important generated machine-readable outputs include:
