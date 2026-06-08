@@ -24,6 +24,10 @@ The benchmark input table is derived from ARC–MOF resources. This repository p
 
 Users should obtain the original data from the official ARC–MOF source records and comply with the original data license, access conditions, and citation requirements.
 
+
+The repository includes figure-level source CSV files under `figure_regeneration/source_data/`. These files contain the numerical values plotted in the final manuscript and Supporting Information figures. They are not the raw ARC--MOF data and are not the processed benchmark input table. They are included to support figure-level reproducibility and numerical auditing of the published visualizations.
+
+
 ## Reproducibility intent
 
 This repository is designed so that users who have prepared the required local input tables can reproduce the benchmark workflow, generated outputs, tables, and figures.
