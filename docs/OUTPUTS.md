@@ -114,3 +114,13 @@ project_summary.json
 ```
 
 Human-readable and machine-readable summaries of the completed benchmark run.
+
+
+
+## Figure-regeneration outputs
+
+The `figure_regeneration/` folder contains a lightweight plotting workflow for regenerating the final manuscript and Supporting Information figures from source CSV files. Regenerated figures are written to:
+
+```text
+figure_regeneration/redrawn_figures/figures_main/
+figure_regeneration/redrawn_figures/figures_si/
