@@ -23,10 +23,3 @@ All notable repository releases are documented here.
 - documented the non-monotonic/local interpretation of the composite diagnostic;
 - made final Figure 7 source data non-redundant.
 
-### Removed from the public release
-
-- duplicate root `README.MD`;
-- private reviewer correspondence;
-- internal revision plans and handoff documents;
-- obsolete or incomplete revision helper outputs;
-- redundant former Figure 7 panel source files.
