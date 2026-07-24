@@ -1,0 +1,5 @@
+target_col,full_n,best_method_label,best_full_rmse,best_full_r2,best_full_spearman,method_spread_rmse_at_full,top1_consensus_probability_at_full,mean_rank_spearman_vs_full_at_full
+uptake(mmol/g) CO2 at 0.015 bar,210995,geometry_plus_topology | rf,0.14769465538695434,0.6365343769973671,0.85678818984777,0.07372058084596125,1.0,0.9935294117647059
+uptake(mmol/g) CO2 at 0.15 bar,210995,geometry_plus_topology | rf,0.4432913592101097,0.8041674966911865,0.9113194474160918,0.3434880295646668,1.0,0.9964705882352941
+uptake(mmol/g) methane at 5.8 bar,210995,geometry_plus_topology | rf,0.6378796846603018,0.8008726622250414,0.8914445097333109,0.4830965101731387,1.0,0.9994117647058823
+uptake(mmol/g) methane at 65 bar,210995,geometry_plus_topology | rf,0.8668475012835775,0.9831740504446126,0.9918558650510769,4.680467204766259,1.0,0.9947058823529412

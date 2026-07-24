@@ -1,0 +1,17 @@
+method_label,enriched_interpretable | hgb,enriched_interpretable | mlp,enriched_interpretable | rf,enriched_interpretable | ridge,geometry_only | hgb,geometry_only | mlp,geometry_only | rf,geometry_only | ridge,geometry_plus_topology | hgb,geometry_plus_topology | mlp,geometry_plus_topology | rf,geometry_plus_topology | ridge,topology_only | hgb,topology_only | mlp,topology_only | rf,topology_only | ridge
+enriched_interpretable | hgb,0.5,1.0,0.7,1.0,1.0,1.0,1.0,1.0,0.0,0.1,0.0,1.0,1.0,1.0,1.0,1.0
+enriched_interpretable | mlp,0.0,0.5,0.0,1.0,0.0,0.7,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0,1.0
+enriched_interpretable | rf,0.3,1.0,0.5,1.0,1.0,1.0,1.0,1.0,0.0,0.1,0.0,1.0,1.0,1.0,1.0,1.0
+enriched_interpretable | ridge,0.0,0.0,0.0,0.5,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0
+geometry_only | hgb,0.0,1.0,0.0,1.0,0.5,1.0,0.1,1.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0,1.0
+geometry_only | mlp,0.0,0.3,0.0,1.0,0.0,0.5,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0,1.0
+geometry_only | rf,0.0,1.0,0.0,1.0,0.9,1.0,0.5,1.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0,1.0
+geometry_only | ridge,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0
+geometry_plus_topology | hgb,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+geometry_plus_topology | mlp,0.9,1.0,0.9,1.0,1.0,1.0,1.0,1.0,0.0,0.5,0.0,1.0,1.0,1.0,1.0,1.0
+geometry_plus_topology | rf,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0
+geometry_plus_topology | ridge,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.5,1.0,1.0,1.0,1.0
+topology_only | hgb,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0
+topology_only | mlp,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.5,0.2,0.2
+topology_only | rf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.8,0.5,0.2
+topology_only | ridge,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.8,0.8,0.5
