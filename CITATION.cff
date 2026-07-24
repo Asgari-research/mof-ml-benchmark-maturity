@@ -1,22 +1,56 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the associated manuscript, this repository, and the original ARC-MOF data resources."
-title: "MOF Benchmark Maturity"
+message: "If you use this repository, please cite both the associated paper and the archived software release."
+title: "MOF Benchmark Maturity: Reproducibility code and publication source data"
 type: software
-authors:
-  - family-names: Abaei
-    given-names: Shayan
-  - family-names: Alimardani
-    given-names: Hosein
-  - family-names: Asgari
-    given-names: Mehrdad
+version: "1.0.0"
+date-released: "2026-07-23"
 repository-code: "https://github.com/Asgari-research/mof-ml-benchmark-maturity"
+url: "https://github.com/Asgari-research/mof-ml-benchmark-maturity"
 license: MIT
-abstract: "Reproducible benchmarking workflow for studying when MOF machine-learning benchmark conclusions become stable as a function of training data volume."
+abstract: >-
+  Reproducibility code, figure and table source data, and post-hoc revision
+  outputs for a benchmark-maturity analysis of metal-organic framework
+  adsorption machine learning across training-set sizes.
 keywords:
   - metal-organic frameworks
+  - adsorption
   - machine learning
   - benchmark maturity
-  - adsorption
-  - descriptor sufficiency
   - reproducibility
-  - materials informatics
+  - ranking stability
+  - screening
+authors:
+  - family-names: "Abaei"
+    given-names: "Shayan"
+    orcid: "https://orcid.org/0009-0001-5794-0314"
+    affiliation: "School of Chemical Engineering, University of Tehran"
+  - family-names: "Alimardani"
+    given-names: "Hosein"
+    affiliation: "University of Tehran"
+  - family-names: "Fakhroleslam"
+    given-names: "Mohammad"
+    affiliation: "Department of Chemical Engineering, Tarbiat Modares University"
+  - family-names: "Eslami"
+    given-names: "Fatemeh"
+    affiliation: "Department of Chemical Engineering, Tarbiat Modares University"
+  - family-names: "Asgari"
+    given-names: "Mehrdad"
+    affiliation: "University of Cambridge"
+preferred-citation:
+  type: article
+  title: "Benchmark Maturity in MOF Adsorption Machine Learning: When Do Conclusions Become Scientifically Reliable?"
+  year: 2026
+  journal: "ChemRxiv"
+  doi: "10.26434/chemrxiv.15003455/v2"
+  authors:
+    - family-names: "Abaei"
+      given-names: "Shayan"
+    - family-names: "Alimardani"
+      given-names: "Hosein"
+    - family-names: "Fakhroleslam"
+      given-names: "Mohammad"
+    - family-names: "Eslami"
+      given-names: "Fatemeh"
+    - family-names: "Asgari"
+      given-names: "Mehrdad"
+# SOFTWARE_DOI_INSERTION_POINT
