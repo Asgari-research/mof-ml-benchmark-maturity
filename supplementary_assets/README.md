@@ -1,13 +1,12 @@
-# Supplementary assets
+# Supporting Information assets
 
-This folder can be used to store lightweight Supporting Information notes or templates if needed.
+This folder is reserved for clean, public Supporting Information assets.
 
-Generated SI figures, SI figure-data exports, and SI tables are created automatically by the pipeline inside the output folder:
+Recommended contents after journal acceptance:
 
-```text
-small_data_mof_benchmark_outputs/supplementary_assets/
-```
+- final SI source;
+- final SI PDF when publisher policy permits;
+- SI figure files;
+- machine-readable supplementary file guide.
 
-Generated files are intentionally excluded from Git by `.gitignore`.
-
-Do not commit heavy generated folders unless the journal or project policy explicitly requires it.
+Canonical numerical source tables are stored in `../publication_data/`, not duplicated here.

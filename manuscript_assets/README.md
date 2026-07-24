@@ -1,13 +1,13 @@
 # Manuscript assets
 
-This folder can be used to store lightweight manuscript-facing assets if needed.
+This folder is reserved for clean, public manuscript assets that are suitable for redistribution.
 
-Generated manuscript figures, figure-data exports, and tables are created automatically by the pipeline inside the output folder:
+Recommended contents after journal acceptance:
 
-```text
-small_data_mof_benchmark_outputs/manuscript_assets/
-```
+- final clean manuscript source;
+- final bibliography;
+- final figure files;
+- a source-to-figure map;
+- the accepted-manuscript PDF when permitted by the publisher.
 
-Generated files are intentionally excluded from Git by `.gitignore`.
-
-Do not commit heavy generated folders unless the journal or project policy explicitly requires it.
+Do not place reviewer correspondence, response letters, tracked-change working files, internal action plans, or private submission links in the public repository.

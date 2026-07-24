@@ -1,126 +1,85 @@
-# Output files
+# Output guide
 
-Running the pipeline creates:
+## Full pipeline working directory
+
+The main pipeline writes a generated working directory:
 
 ```text
 small_data_mof_benchmark_outputs/
 ```
 
-This folder is intentionally ignored by Git because it can be regenerated.
+This directory may contain:
 
-## Main output folders
+- logs;
+- job checkpoints;
+- seed-level predictions;
+- model outputs;
+- aggregated metrics;
+- figure-data exports;
+- figures;
+- LaTeX tables;
+- manifests.
+
+The full working directory is intentionally excluded from Git because it can be large and may contain non-redistributable processed material.
+
+## Curated publication archive
+
+The repository tracks a curated, non-redundant numerical archive:
 
 ```text
-logs/
-checkpoints/
-data_processed/
-results/
-manuscript_assets/
-supplementary_assets/
-final_exports/
+publication_data/
 ```
 
-## Important generated CSV files
-
-### Per-job and aggregated metrics
+### Figure source data
 
 ```text
-si_all_job_metrics.csv
+publication_data/figure_source_data/main/
+publication_data/figure_source_data/si/
 ```
 
-Per-job metric table before aggregation. This is the main raw numerical audit trail.
+The final Figure 7 is a single-panel synthesis/leaderboard figure. Redundant former panels are not duplicated in the canonical publication archive because their numerical data are already represented by earlier figures.
+
+### Table source data
 
 ```text
-si_aggregated_performance.csv
+publication_data/table_source_data/main/
+publication_data/table_source_data/si/
 ```
 
-Aggregated mean values, standard deviations, confidence intervals, and repeat counts.
+This includes compact main-text tables and the larger machine-readable SI audit tables.
 
-### Ranking stability
+### Revision outputs
 
 ```text
-si_ranking_stability.csv
+publication_data/revision_outputs/
 ```
 
-Top-1 consensus and rank-preservation summaries.
+These tables were generated post-hoc from existing benchmark results and did not require model retraining.
 
-### Screening reproducibility
+### Metadata
 
 ```text
-si_screening_reproducibility.csv
+publication_data/metadata/
 ```
 
-Top-k overlap and elite-enrichment summaries, including the primary 5% elite-fraction metric and fixed-k variants.
+This folder records:
 
-### Descriptor-family summaries
+- file inventory;
+- row and column counts;
+- SHA-256 checksums;
+- benchmark definition;
+- provenance notes.
 
-```text
-descriptor_family_aggregation.csv
+## Regeneration
+
+Rebuild revision tables:
+
+```bash
+python scripts/revision/generate_revision_tables.py
 ```
 
-Descriptor-family-level aggregation across targets and test partitions.
+Validate all tracked publication data:
 
-### Sample efficiency
-
-```text
-sample_efficiency.csv
+```bash
+python scripts/validate_repository.py
 ```
-
-Method-level sample-efficiency thresholds for recovering 50%, 80%, 90%, and 95% of attainable RMSE gain.
-
-### Target difficulty
-
-```text
-target_difficulty.csv
-```
-
-Target-level summary comparing best full-data RMSE, rank correlation, and method spread across adsorption targets.
-
-### Feature-effect convergence
-
-```text
-si_feature_effect_convergence.csv
-```
-
-Compact feature-effect convergence summary.
-
-```text
-si_feature_effect_importances.csv
-```
-
-Feature-level permutation-importance records.
-
-### Final leaderboard / Pareto summary
-
-```text
-method_pareto_summary.csv
-```
-
-Full-data accuracy–ranking–screening trade-off summary.
-
-### Pairwise superiority
-
-```text
-pairwise_superiority_*.csv
-```
-
-Pairwise probability-of-superiority matrices for selected targets, test seeds, and training sizes.
-
-## Summary manifests
-
-```text
-project_summary.txt
-project_summary.json
-```
-
-Human-readable and machine-readable summaries of the completed benchmark run.
-
-
-
-## Figure-regeneration outputs
-
-The `figure_regeneration/` folder contains a lightweight plotting workflow for regenerating the final manuscript and Supporting Information figures from source CSV files. Regenerated figures are written to:
-
-```text
-figure_regeneration/redrawn_figures/figures_main/
-figure_regeneration/redrawn_figures/figures_si/

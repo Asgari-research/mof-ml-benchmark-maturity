@@ -1,0 +1,5 @@
+descriptor_family,n_features_before_encoding,numeric_features,categorical_features,description
+geometry_only,6,"Density, ASA, AVA, AVAf, Df, Di",-,Six lightweight pore/geometry descriptors.
+enriched_interpretable,17,"UC_volume, Density, ASA, vASA, NASA, AVA, AVAf, POAVA, Df, Di, Dif, lcd_pld_ratio, cavity_window_gap, sa_pv_ratio, vf_density_ratio, log_pld_plus1, log_lcd_plus1",-,Expanded lightweight geometry/interpretable descriptor set.
+topology_only,1,-,topology_label,Grouped topology label only.
+geometry_plus_topology,18,"UC_volume, Density, ASA, vASA, NASA, AVA, AVAf, POAVA, Df, Di, Dif, lcd_pld_ratio, cavity_window_gap, sa_pv_ratio, vf_density_ratio, log_pld_plus1, log_lcd_plus1",topology_label,Enriched interpretable descriptors plus grouped topology.

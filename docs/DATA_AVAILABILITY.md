@@ -1,43 +1,54 @@
 # Data availability
 
-The processed benchmark input table used in the manuscript is not included in this repository.
+## Public materials
 
-The workflow expects a local `clean_data.csv` file containing framework identifiers, geometric descriptors, grouped topology labels, and adsorption targets. An optional `geometric_properties.csv` file can be provided for geometric-descriptor consistency checks.
+This repository provides:
 
-## Expected local files
+- benchmark and post-processing source code;
+- environment specifications;
+- curated CSV source data underlying manuscript figures;
+- curated CSV source data underlying manuscript and Supporting Information tables;
+- post-hoc revision outputs;
+- file-level checksums and provenance metadata.
 
-Required:
+The canonical public numerical archive is:
 
 ```text
-clean_data.csv
+publication_data/
 ```
 
-Optional:
+## Materials not redistributed
 
-```text
-geometric_properties.csv
-```
+The repository does not redistribute:
 
-## Why the data are not redistributed
+- raw ARC–MOF records;
+- the processed benchmark input table (`clean_data.csv`);
+- the optional local geometry-check table (`geometric_properties.csv`);
+- model checkpoints;
+- large prediction arrays or job checkpoint folders;
+- private peer-review correspondence;
+- internal revision-planning documents.
 
-The benchmark input table is derived from ARC–MOF resources. This repository provides the code and workflow logic but does not redistribute raw ARC–MOF files or the processed benchmark table.
+The underlying database must be obtained from its original providers and used under their access, license, and citation conditions.
 
-Users should obtain the original data from the official ARC–MOF source records and comply with the original data license, access conditions, and citation requirements.
+## Reproducibility boundary
 
+Two levels of reproducibility are supported.
 
-The repository includes figure-level source CSV files under `figure_regeneration/source_data/`. These files contain the numerical values plotted in the final manuscript and Supporting Information figures. They are not the raw ARC--MOF data and are not the processed benchmark input table. They are included to support figure-level reproducibility and numerical auditing of the published visualizations.
+### Figure/table-level reproduction
 
+This level is fully public. Users can inspect the numerical values underlying the figures and tables, verify checksums, regenerate post-hoc revision tables, and redraw publication figures without the private processed benchmark input.
 
-## Reproducibility intent
+### Full model-level reproduction
 
-This repository is designed so that users who have prepared the required local input tables can reproduce the benchmark workflow, generated outputs, tables, and figures.
+This level requires users to prepare the local benchmark input table from the original ARC–MOF resources. The repository documents the expected filenames, targets, descriptors, splits, fixed model settings, and commands, but does not redistribute the prepared input table.
 
-The repository intentionally excludes:
+## Derived-data licensing
 
-- raw data files,
-- processed benchmark input tables,
-- model checkpoints,
-- per-job prediction files,
-- generated output folders.
+The repository MIT License applies to code and documentation. It does not relicense third-party source records. The public CSV files are derived numerical outputs supplied for scholarly verification; users must cite the associated paper and the original ARC–MOF sources and must respect any applicable upstream terms.
 
-This avoids redistributing data and keeps the GitHub repository lightweight.
+## DOI archive
+
+<!-- ZENODO_DOI_START -->
+A DOI-bearing software archive will be added after the first GitHub release is processed by Zenodo.
+<!-- ZENODO_DOI_END -->

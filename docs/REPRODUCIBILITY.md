@@ -1,122 +1,99 @@
-# Reproducibility guide
+# Reproducibility protocol
 
-This document explains how to reproduce the benchmark outputs after preparing the required local data files.
+## Evaluation scope
 
-## 1. Prepare input files
+All reported main benchmark results use fixed, random, in-distribution held-out partitions drawn from the same ARC–MOF-derived parent pool. They assess interpolation reliability and do not establish topology-disjoint or general out-of-distribution performance.
 
-Prepare the required local input file:
+## Split and seed protocol
 
-```text
-clean_data.csv
-```
+For each target and test seed:
 
-Optional:
+1. A fixed held-out partition is created once.
+2. The remaining rows form the training pool.
+3. For each subsample seed, a random permutation of the training pool is generated.
+4. Nested training subsets are prefixes of that permutation.
+5. The same subset is used for every descriptor–model pipeline at the same training size and seed.
+6. Model random states follow the benchmark pipeline's recorded seed logic.
+7. At full training size, row sampling is identical across repeats; any remaining variation comes from stochastic learners.
 
-```text
-geometric_properties.csv
-```
-
-Place these files beside the pipeline script or adjust the configuration in:
-
-```text
-src/small_data_mof_benchmark_pipeline.py
-```
-
-The script expects the following target columns:
+## Primary target
 
 ```text
-uptake(mmol/g) CO2 at 0.015 bar
 uptake(mmol/g) CO2 at 0.15 bar
-uptake(mmol/g) methane at 5.8 bar
-uptake(mmol/g) methane at 65 bar
 ```
 
-The expected identifier and topology columns are:
+Primary test seed:
 
 ```text
-filename
-Crystalnet
+17
 ```
 
-## 2. Install dependencies
+Primary subsample seeds:
 
-Using pip:
-
-```bash
-pip install -r requirements.txt
+```text
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 ```
 
-Using Conda:
+## Training sizes
 
-```bash
-conda env create -f environment.yml
-conda activate mof-benchmark-maturity
+```text
+500, 1000, 2000, 5000, 10000, 20000, 40000, 210995
 ```
 
-## 3. Run the full pipeline
+## Descriptor families
+
+- geometry only;
+- enriched interpretable geometry;
+- topology only;
+- geometry plus topology.
+
+## Model families
+
+- Ridge;
+- RF;
+- HGB;
+- shallow MLP.
+
+## Composite diagnostic
+
+The publication configuration is stored in `config/publication_v1.yml`.
+
+The baseline rule requires:
+
+- overlapping top-two RMSE repeat intervals;
+- top-1 consensus at least 0.80;
+- mean rank-Spearman versus the full-data ordering at least 0.90;
+- top-5% overlap SD no greater than 0.01;
+- top-5% enrichment SD no greater than 0.20.
+
+The first satisfying size is a local diagnostic crossing, not a guaranteed persistent or universal threshold.
+
+## Important statistical interpretation
+
+The primary target uses ten repeated subsample seeds, so empirical probabilities have resolution 0.1. Auxiliary targets and alternative partitions may use five repeats, giving resolution 0.2. Wilson intervals are therefore reported for consensus proportions.
+
+## Commands
+
+Full run:
 
 ```bash
 python src/small_data_mof_benchmark_pipeline.py --stage all
 ```
 
-This runs model jobs and post-processing.
-
-## 4. Run only model jobs
-
-```bash
-python src/small_data_mof_benchmark_pipeline.py --stage run
-```
-
-## 5. Run only post-processing
+Post-processing only:
 
 ```bash
 python src/small_data_mof_benchmark_pipeline.py --stage post
 ```
 
-This regenerates tables and figures from saved job outputs.
-
-## 6. Resume interrupted runs
-
-The workflow is checkpointed at the job level. If a run is interrupted, rerun the same command:
+Revision tables:
 
 ```bash
-python src/small_data_mof_benchmark_pipeline.py --stage all
+python scripts/revision/generate_revision_tables.py
 ```
 
-Completed jobs are skipped automatically when checkpoint files are available.
-
-## 7. Output folder
-
-The main generated folder is:
-
-```text
-small_data_mof_benchmark_outputs/
-```
-
-This folder is intentionally ignored by Git.
-
-## 8. Reproducibility checks
-
-After running the workflow, check the following generated files:
-
-```text
-small_data_mof_benchmark_outputs/final_exports/project_summary.txt
-small_data_mof_benchmark_outputs/final_exports/project_summary.json
-```
-
-### `docs/REPRODUCIBILITY.md`
-
-Add:
-
-```markdown
-## Figure-only reproduction
-
-To reproduce only the final manuscript and Supporting Information figures, without rerunning model training:
+Repository validation:
 
 ```bash
-python figure_regeneration/draw_all_figures.py
-
-Also inspect the core machine-readable outputs listed in `docs/OUTPUTS.md`.
-
-
-
+python scripts/validate_repository.py
+```

@@ -1,0 +1,21 @@
+schema_version: 1
+release: "publication-v1"
+manuscript_id: "DD-ART-06-2026-000351"
+main_target: "uptake(mmol/g) CO2 at 0.15 bar"
+primary_test_seed: 17
+primary_subsample_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+auxiliary_subsample_seeds: [0, 1, 2, 3, 4]
+training_sizes: [500, 1000, 2000, 5000, 10000, 20000, 40000, 210995]
+evaluation_scope: "fixed in-distribution held-out partitions"
+target_scaled_before_error_metrics: false
+error_units: "mmol g^-1"
+composite_rule:
+  require_top2_rmse_interval_overlap: true
+  top1_consensus_min: 0.80
+  rank_spearman_vs_full_min: 0.90
+  top5_overlap_sd_max: 0.01
+  top5_enrichment_sd_max: 0.20
+interpretation:
+  first_crossing_is_local: true
+  persistent_monotonic_threshold_claimed: false
+  universal_sample_size_law_claimed: false
