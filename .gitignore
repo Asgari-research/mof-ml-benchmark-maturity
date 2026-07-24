@@ -1,82 +1,68 @@
 # Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
 *.so
 .pytest_cache/
 .mypy_cache/
-.ipynb_checkpoints/
-*.egg-info/
-
-# Environments
+.ruff_cache/
+.coverage
+htmlcov/
 .venv/
 venv/
 env/
-ENV/
-.conda/
+.env
 
-# OS / editor
+# Jupyter
+.ipynb_checkpoints/
+
+# Operating systems/editors
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 
-# Raw / processed data not redistributed
-clean_data.csv
-geometric_properties.csv
-data/*.csv
-data/*.xlsx
-data/*.xls
-data/*.parquet
-data/*.pkl
-data/*.pkl.gz
-data/*.json
-data/*.zip
-data/raw/
-data/processed/
-data/interim/
-
-# Pipeline-generated outputs
-small_data_mof_benchmark_outputs/
-mof_benchmark_maturity_outputs/
-logs/
-checkpoints/
-results/
-final_exports/
-data_processed/
-
-# Generated manuscript and SI assets
-manuscript_assets/figures_main/
-manuscript_assets/figure_data_main/
-manuscript_assets/tables_main/
-manuscript_assets/figures_additional/
-supplementary_assets/figures_si/
-supplementary_assets/figure_data_si/
-supplementary_assets/tables_si/
-supplementary_assets/figures_additional_si/
-
-# Heavy generated files
-*.pkl.gz
-*.joblib
-*.pickle
-*.npy
-*.npz
-*.csv.gz
-
-# LaTeX temporary files
+# LaTeX build products
 *.aux
 *.bbl
 *.bcf
 *.blg
 *.fdb_latexmk
 *.fls
+*.lof
 *.log
+*.lot
 *.out
 *.run.xml
 *.synctex.gz
 *.toc
-*.lof
-*.lot
-*.nav
-*.snm
+
+# Private/local benchmark inputs
+clean_data.csv
+geometric_properties.csv
+data/*.csv
+data/*.parquet
+data/*.pkl
+data/*.pickle
+
+# Full generated benchmark workspace
+small_data_mof_benchmark_outputs/
+
+# Large/generated model artifacts
+*.joblib
+*.pkl
+*.pickle
+*.parquet
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.ckpt
+
+# Temporary archives and backups
+*.bak
+*.tmp
+*.temp
+*.before_publication_threshold.bak
+
+# Keep curated public CSV files under publication_data/
+!publication_data/**/*.csv
