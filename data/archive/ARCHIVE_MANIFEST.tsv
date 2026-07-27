@@ -1,0 +1,17 @@
+category	recommended_path	required	description
+input	inputs/processed_modelling_table.csv	yes	Exact processed table used for the submitted analysis, if redistribution is permitted
+split	splits/split_manifest.tsv	yes	Target, test seed, counts, and filenames for immutable split records
+split	splits/<target>__testseed_<seed>__training_pool_ids.csv	yes	Framework identifiers in the training pool
+split	splits/<target>__testseed_<seed>__heldout_ids.csv	yes	Framework identifiers in the fixed in-distribution held-out partition
+subsets	splits/<target>__testseed_<seed>__subsample_seed_<seed>__ordering.csv	yes	Seed-specific ordering from which nested prefixes are formed
+record	records/row_inclusion_exclusion.tsv	yes	Row-level inclusion/exclusion outcome and reason
+metadata	metadata/column_dictionary.tsv	yes	Column names, definitions, units, types, and missing-data treatment
+metadata	metadata/preprocessing_record.md	yes	Identifier normalization, imputation, topology grouping, and scaling rules
+environment	metadata/environment-lock.yml	yes	Pinned environment used for verification
+provenance	metadata/repository_commit.txt	yes	Exact Git commit SHA
+provenance	metadata/release_tag.txt	yes	GitHub release tag
+result	results/principal_tables/	yes	Final machine-readable tables supporting manuscript and SI
+result	results/targeted_revision_outputs/	yes	Group ablation, uncertainty, and RF sensitivity files
+figure	results/figure_source_data/	yes	Final figure-source CSVs
+manifest	results/final_summary_manifests/	yes	Project summary text/JSON and run manifest
+checksum	checksums/SHA256SUMS.txt	yes	SHA-256 checksum for every deposited file
