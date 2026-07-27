@@ -1,56 +1,29 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite both the associated paper and the archived software release."
-title: "MOF Benchmark Maturity: Reproducibility code and publication source data"
+message: "If you use this software, please cite the associated manuscript, this repository release, and the original ARC-MOF data resources."
+title: "Benchmark Maturity in MOF Adsorption Machine Learning"
 type: software
-version: "1.0.0"
-date-released: "2026-07-23"
+authors:
+  - family-names: Abaei
+    given-names: Shayan
+  - family-names: Alimardani
+    given-names: Hosein
+  - family-names: Fakhroleslam
+    given-names: Mohammad
+  - family-names: Eslami
+    given-names: Fatemeh
+  - family-names: Asgari
+    given-names: Mehrdad
 repository-code: "https://github.com/Asgari-research/mof-ml-benchmark-maturity"
-url: "https://github.com/Asgari-research/mof-ml-benchmark-maturity"
 license: MIT
 abstract: >-
-  Reproducibility code, figure and table source data, and post-hoc revision
-  outputs for a benchmark-maturity analysis of metal-organic framework
-  adsorption machine learning across training-set sizes.
+  Reproducible workflow and figure-level audit assets for studying when
+  conclusions from an ARC-MOF-derived adsorption machine-learning benchmark
+  become stable enough for a stated in-distribution use as training data are added.
 keywords:
   - metal-organic frameworks
   - adsorption
   - machine learning
   - benchmark maturity
   - reproducibility
-  - ranking stability
   - screening
-authors:
-  - family-names: "Abaei"
-    given-names: "Shayan"
-    orcid: "https://orcid.org/0009-0001-5794-0314"
-    affiliation: "School of Chemical Engineering, University of Tehran"
-  - family-names: "Alimardani"
-    given-names: "Hosein"
-    affiliation: "University of Tehran"
-  - family-names: "Fakhroleslam"
-    given-names: "Mohammad"
-    affiliation: "Department of Chemical Engineering, Tarbiat Modares University"
-  - family-names: "Eslami"
-    given-names: "Fatemeh"
-    affiliation: "Department of Chemical Engineering, Tarbiat Modares University"
-  - family-names: "Asgari"
-    given-names: "Mehrdad"
-    affiliation: "University of Cambridge"
-preferred-citation:
-  type: article
-  title: "Benchmark Maturity in MOF Adsorption Machine Learning: When Do Conclusions Become Scientifically Reliable?"
-  year: 2026
-  journal: "ChemRxiv"
-  doi: "10.26434/chemrxiv.15003455/v2"
-  authors:
-    - family-names: "Abaei"
-      given-names: "Shayan"
-    - family-names: "Alimardani"
-      given-names: "Hosein"
-    - family-names: "Fakhroleslam"
-      given-names: "Mohammad"
-    - family-names: "Eslami"
-      given-names: "Fatemeh"
-    - family-names: "Asgari"
-      given-names: "Mehrdad"
-# SOFTWARE_DOI_INSERTION_POINT
+  - materials informatics
