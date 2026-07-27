@@ -1,85 +1,99 @@
-# Output guide
+# Output files
 
-## Full pipeline working directory
-
-The main pipeline writes a generated working directory:
+Running the full workflow creates:
 
 ```text
 small_data_mof_benchmark_outputs/
 ```
 
-This directory may contain:
+The folder is excluded from Git because it can be regenerated from the required local inputs and documented code state.
 
-- logs;
-- job checkpoints;
-- seed-level predictions;
-- model outputs;
-- aggregated metrics;
-- figure-data exports;
-- figures;
-- LaTeX tables;
-- manifests.
-
-The full working directory is intentionally excluded from Git because it can be large and may contain non-redistributable processed material.
-
-## Curated publication archive
-
-The repository tracks a curated, non-redundant numerical archive:
+## Main output folders
 
 ```text
-publication_data/
+logs/
+checkpoints/
+data_processed/
+results/
+manuscript_assets/
+supplementary_assets/
+final_exports/
 ```
 
-### Figure source data
+## Principal machine-readable files
+
+### Per-job and aggregated held-out metrics
 
 ```text
-publication_data/figure_source_data/main/
-publication_data/figure_source_data/si/
+si_all_job_metrics.csv
+si_aggregated_performance.csv
 ```
 
-The final Figure 7 is a single-panel synthesis/leaderboard figure. Redundant former panels are not duplicated in the canonical publication archive because their numerical data are already represented by earlier figures.
+The first file stores per-job metrics. The second stores repeat means, standard deviations, descriptive intervals, and repeat counts.
 
-### Table source data
+### Ranking stability
 
 ```text
-publication_data/table_source_data/main/
-publication_data/table_source_data/si/
+si_ranking_stability.csv
 ```
 
-This includes compact main-text tables and the larger machine-readable SI audit tables.
+Contains modal-winner consensus and ordering agreement with the full-data ranking.
 
-### Revision outputs
+### Screening reproducibility
 
 ```text
-publication_data/revision_outputs/
+si_screening_reproducibility.csv
+fixed_k_screening_summary.csv
 ```
 
-These tables were generated post-hoc from existing benchmark results and did not require model retraining.
+Contains elite-fraction and fixed-k overlap/enrichment summaries. Mean values quantify screening utility; across-repeat variation quantifies screening stability.
 
-### Metadata
+### Descriptor-family and target summaries
 
 ```text
-publication_data/metadata/
+descriptor_family_aggregation.csv
+sample_efficiency.csv
+target_difficulty.csv
 ```
 
-This folder records:
+### Feature-effect diagnostics
 
-- file inventory;
-- row and column counts;
-- SHA-256 checksums;
-- benchmark definition;
-- provenance notes.
-
-## Regeneration
-
-Rebuild revision tables:
-
-```bash
-python scripts/revision/generate_revision_tables.py
+```text
+si_feature_effect_convergence.csv
+si_feature_effect_importances.csv
 ```
 
-Validate all tracked publication data:
+### Pairwise superiority
 
-```bash
-python scripts/validate_repository.py
+```text
+pairwise_superiority_*.csv
+rf_vs_hgb_pairwise.csv
+full_data_pairwise_audit.csv
 ```
+
+Pairwise values are empirical repeat frequencies evaluated on the fixed in-distribution held-out partition.
+
+### Revision analyses
+
+```text
+per_target_maturity_summary.csv
+cutoff_sensitivity_grid.csv
+test_partition_alt_seed_curves.csv
+top1_consensus_uncertainty.csv
+group_ablation_seed_level.csv
+group_ablation_summary.csv
+stability_metric_uncertainty.csv
+rf_low_n_sensitivity_seed_level.csv
+rf_low_n_sensitivity_summary.csv
+```
+
+These files support the targeted analyses added during revision, including Tables S10-S19.
+
+### Summary manifests
+
+```text
+project_summary.txt
+project_summary.json
+```
+
+For manuscript-exact reproduction, archive the final copies of these files together with input, split, environment, and checksum manifests.
