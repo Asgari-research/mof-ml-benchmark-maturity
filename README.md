@@ -130,7 +130,9 @@ the processed input and documented workflow.
 ## Zenodo
 
 <!-- ZENODO_DOI_START -->
-The DOI for the frozen publication release `v1.0.0` will be inserted here after the manual Zenodo Software record is published.
+Accepted-manuscript release `v1.0.0` (version DOI): https://doi.org/10.5281/zenodo.22080792
+
+Current/all-versions record DOI: https://doi.org/10.5281/zenodo.22080791
 <!-- ZENODO_DOI_END -->
 
 ## Citation

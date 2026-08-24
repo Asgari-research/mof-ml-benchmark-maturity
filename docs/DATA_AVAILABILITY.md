@@ -10,7 +10,9 @@ outputs, environment/configuration files, and reproducibility documentation.
 The frozen publication release is `v1.0.0`.
 
 <!-- ZENODO_DOI_START -->
-The Zenodo DOI will be inserted here after the manual `v1.0.0` Software archive is published.
+Accepted-manuscript release `v1.0.0` (version DOI): https://doi.org/10.5281/zenodo.22080792
+
+Current/all-versions record DOI: https://doi.org/10.5281/zenodo.22080791
 <!-- ZENODO_DOI_END -->
 
 ## Processed study input
