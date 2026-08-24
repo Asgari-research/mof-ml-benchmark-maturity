@@ -1,5 +1,0 @@
-target_col,first_n_satisfying_base_rule,n_training_sizes
-uptake(mmol/g) CO2 at 0.015 bar,,8
-uptake(mmol/g) CO2 at 0.15 bar,5000.0,8
-uptake(mmol/g) methane at 5.8 bar,2000.0,8
-uptake(mmol/g) methane at 65 bar,10000.0,8

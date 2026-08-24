@@ -1,136 +1,151 @@
 # Benchmark Maturity in MOF Adsorption Machine Learning
 
-Code, documentation, figure-regeneration assets, and machine-readable audit outputs for the manuscript:
+Reproducible code, processed benchmark input, publication source data, and audit outputs for:
 
 > **Benchmark Maturity in MOF Adsorption Machine Learning: When Do Conclusions Become Scientifically Reliable?**
 
-The project evaluates when conclusions drawn from an ARC-MOF-derived tabular adsorption benchmark become reproducible enough for a stated in-distribution use. It audits predictive error, method ordering, pairwise superiority, screening consistency, and feature-effect convergence as training data are added.
+## What this repository contains
 
-## Evaluation scope
+This repository supports the accepted Digital Discovery study with:
 
-All numerical evaluations use random **in-distribution held-out test partitions** drawn from the same processed ARC-MOF-derived parent pool. The repository and manuscript do not claim topology-disjoint, chemistry-disjoint, temporal, or general out-of-distribution validation.
+- the benchmark and post-processing workflow;
+- the processed ARC–MOF-derived benchmark input used by the workflow;
+- fixed publication configuration and validation utilities;
+- figure-regeneration code and source data;
+- machine-readable figure/table data and robustness outputs;
+- environment and provenance documentation.
 
-The main benchmark design uses:
+## Validation scope
 
-- fixed in-distribution train/held-out partitions;
-- nested training subsets;
-- repeated subsampling;
-- 16 descriptor-model pipelines;
-- held-out regression metrics;
-- ranking-stability diagnostics;
-- screening-reproducibility diagnostics;
-- pairwise frequencies of superiority;
-- feature-effect convergence diagnostics.
+All reported numerical evaluations use fixed **in-distribution held-out partitions** drawn from the same processed
+ARC–MOF-derived parent pool.
 
-The main target is CO2 uptake at 0.15 bar. The Supporting Information also reports CO2 uptake at 0.015 bar and methane uptake at 5.8 and 65 bar.
+The results do not claim topology-disjoint, chemistry-disjoint, temporal, or general out-of-distribution validation.
 
 ## Repository structure
 
 ```text
-README.md
-LICENSE
-CITATION.cff
-requirements.txt
-environment.yml
-.gitignore
-
-src/
-  small_data_mof_benchmark_pipeline.py
-
-data/
-  README.md
-
-docs/
-  DATA_AVAILABILITY.md
-  OUTPUTS.md
-  REPRODUCIBILITY.md
-
-figure_regeneration/
-  draw_all_figures.py
-  source_data/
-  redrawn_figures/
-
-manuscript_assets/
-supplementary_assets/
+config/                 publication configuration
+data/                   processed benchmark input and provenance
+docs/                   data availability, outputs, reproducibility
+figure_regeneration/    figure code and source data
+publication_data/       canonical machine-readable publication archive
+scripts/                validation, DOI, and revision-analysis utilities
+src/                    benchmark pipeline
 ```
+
+## Processed benchmark input
+
+The full study-specific ML input is distributed as:
+
+```text
+data/clean_data.zip
+```
+
+The ZIP contains `clean_data.csv`, a processed and modified ARC–MOF-derived table prepared for this study through
+data cleaning, identifier normalization, descriptor selection, adsorption-target organization, and
+machine-learning input preparation.
+
+Extract it with:
+
+```bash
+python -m zipfile -e data/clean_data.zip data/
+```
+
+Its release identity is documented in:
+
+```text
+data/clean_data_manifest.json
+```
+
+## Original ARC–MOF source
+
+The underlying source adsorption/structural data are available from ARC–MOF:
+
+```text
+https://doi.org/10.5281/zenodo.6908728
+```
+
+Raw/unmodified ARC–MOF files are not duplicated here. Users requiring original source files or optional
+source-level descriptor checks should obtain those files from ARC–MOF and comply with its original licence and
+citation requirements.
 
 ## Installation
 
-Using pip:
+### pip
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-Using Conda:
+### Conda
 
 ```bash
 conda env create -f environment.yml
 conda activate mof-benchmark-maturity
 ```
 
-## Input data
-
-The full pipeline expects a locally prepared `clean_data.csv` file containing framework identifiers, geometric descriptors, grouped topology labels, and adsorption targets. An optional `geometric_properties.csv` file is used only for geometric-descriptor consistency checks.
-
-The public GitHub repository does not redistribute raw ARC-MOF files, the manuscript's processed modelling table, large prediction files, model checkpoints, or complete generated output folders. Consult `docs/DATA_AVAILABILITY.md` before attempting a full rerun.
-
-## Running the workflow
-
-Run the complete benchmark and post-processing workflow:
+## Run the benchmark
 
 ```bash
 python src/small_data_mof_benchmark_pipeline.py --stage all
 ```
 
-Run model jobs only:
+Model jobs only:
 
 ```bash
 python src/small_data_mof_benchmark_pipeline.py --stage run
 ```
 
-Run post-processing from saved checkpoints:
+Post-processing only:
 
 ```bash
 python src/small_data_mof_benchmark_pipeline.py --stage post
 ```
 
-The workflow is checkpointed at the job level. Re-running the same command skips completed jobs when valid checkpoint files are present.
+## Validate the publication release
 
-## Generated outputs
+```bash
+python scripts/validate_release_data.py
+python scripts/validate_repository.py
+python -m compileall src scripts figure_regeneration
+```
 
-The pipeline creates `small_data_mof_benchmark_outputs/`, containing logs, processed tables, job checkpoints, predictions, metrics, figure-data exports, manuscript figures, SI figures, LaTeX tables, and summary manifests. Generated folders are excluded from Git because they can be recreated from the documented workflow and the required local inputs.
+The same checks are run automatically by GitHub Actions.
 
-The principal machine-readable outputs are described in `docs/OUTPUTS.md`.
-
-## Figure regeneration
-
-Publication figures can be regenerated without retraining models:
+## Regenerate publication figures
 
 ```bash
 python figure_regeneration/draw_all_figures.py
 ```
 
-The script reads the included figure-level CSV files from `figure_regeneration/source_data/` and writes figures to `figure_regeneration/redrawn_figures/`. These files provide a numerical audit trail for the published figures without redistributing the complete processed ARC-MOF-derived modelling table.
+## Publication source data
 
-## Reproducibility boundary
+`publication_data/` is the canonical checksum-tracked machine-readable archive for manuscript/SI figure and table
+source data and robustness analyses.
 
-The public repository supports code inspection, figure regeneration, and full reruns after the required local input table has been prepared. Exact reproduction of the submitted analysis additionally requires the manuscript-specific processed table, immutable split identifiers, inclusion/exclusion record, environment identity, and principal result files. The location of the manuscript-exact archive should be added here when its permanent record is available.
+Large intermediate prediction caches and model checkpoints are not archived because they can be regenerated from
+the processed input and documented workflow.
 
-## Scope and interpretation
+## Zenodo
 
-The numerical sample-size transition is specific to the targets, split design, model classes, descriptor space, and database coverage analysed in the manuscript. It is not a universal row-count rule. The transferable contribution is the joint audit of accuracy, method ordering, screening behaviour, and feature-effect reproducibility.
+<!-- ZENODO_DOI_START -->
+The DOI for the frozen publication release `v1.0.0` will be inserted here after the manual Zenodo Software record is published.
+<!-- ZENODO_DOI_END -->
 
 ## Citation
 
-Users should cite:
+Please cite:
 
-1. the associated manuscript when available;
-2. the original ARC-MOF data publication and archive;
-3. this software repository or its tagged release.
+1. the associated Digital Discovery article when its article DOI is available;
+2. the frozen Zenodo `v1.0.0` software archive;
+3. the original ARC–MOF source record at `https://doi.org/10.5281/zenodo.6908728`.
 
 See `CITATION.cff` for software citation metadata.
 
-## Licence
+## Licence and data provenance
 
-Code and documentation are released under the MIT License. Data are not licensed by this repository; users must follow the original data providers' access, licence, and citation requirements.
+Custom software is released under the MIT License.
+
+The processed benchmark input is derived from ARC–MOF and remains subject to the original source's licence and
+citation requirements.

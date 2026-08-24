@@ -89,10 +89,17 @@ def check_manifest(root: Path) -> None:
         path = pub / row.relative_path
         if not path.exists():
             fail(f"Manifest entry missing on disk: {row.relative_path}")
-        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        raw = path.read_bytes()
+
+        # The publication manifest records canonical LF bytes.
+        # Git may check text files out as CRLF on Windows, so normalize
+        # line endings before checksum and byte-size validation.
+        canonical = raw.replace(b"\r\n", b"\n") if b"\x00" not in raw else raw
+
+        digest = hashlib.sha256(canonical).hexdigest()
         if digest != row.sha256:
             fail(f"Checksum mismatch: {row.relative_path}")
-        if int(path.stat().st_size) != int(row.size_bytes):
+        if len(canonical) != int(row.size_bytes):
             fail(f"Size mismatch: {row.relative_path}")
         if path.suffix.lower() == ".csv":
             frame = pd.read_csv(path)

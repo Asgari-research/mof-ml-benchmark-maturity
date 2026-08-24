@@ -1,0 +1,49 @@
+{
+  "creators": [
+    {
+      "name": "Abaei, Shayan",
+      "affiliation": "School of Chemical Engineering, Faculty of Engineering, University of Tehran, Tehran, Iran"
+    },
+    {
+      "name": "Alimardani, Hosein",
+      "affiliation": "Faculty of Engineering, University of Tehran, Tehran, Iran"
+    },
+    {
+      "name": "Fakhroleslam, Mohammad",
+      "affiliation": "Department of Chemical Engineering, Tarbiat Modares University, Tehran, Iran"
+    },
+    {
+      "name": "Eslami, Fatemeh",
+      "affiliation": "Department of Chemical Engineering, Tarbiat Modares University, Tehran, Iran"
+    },
+    {
+      "name": "Asgari, Mehrdad",
+      "affiliation": "Lucy Cavendish College, University of Cambridge, Cambridge CB3 0BU, United Kingdom"
+    }
+  ],
+  "title": "Benchmark Maturity in MOF Adsorption Machine Learning",
+  "version": "1.0.0",
+  "description": "Reproducibility release for the accepted Digital Discovery manuscript \"Benchmark Maturity in MOF Adsorption Machine Learning: When Do Conclusions Become Scientifically Reliable?\" (DD-ART-06-2026-000351). The archive contains custom benchmark/post-processing software, environment/configuration files, figure/table source data, machine-readable audit outputs, and data/clean_data.zip containing the processed ARC-MOF-derived benchmark input. Raw ARC-MOF source files are not republished; the original source is https://doi.org/10.5281/zenodo.6908728. The numerical evaluation is in-distribution.",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.6908728",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset"
+    }
+  ],
+  "keywords": [
+    "metal-organic frameworks",
+    "MOF",
+    "adsorption",
+    "machine learning",
+    "benchmark maturity",
+    "reproducibility",
+    "screening",
+    "materials informatics",
+    "ARC-MOF"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "language": "eng"
+}

@@ -1,24 +1,31 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the associated manuscript, this repository release, and the original ARC-MOF data resources."
+message: "Please cite the associated article, this archived software release, and the original ARC-MOF data source."
 title: "Benchmark Maturity in MOF Adsorption Machine Learning"
 type: software
+version: "1.0.0"
 authors:
   - family-names: Abaei
     given-names: Shayan
+    affiliation: "School of Chemical Engineering, Faculty of Engineering, University of Tehran, Tehran, Iran"
   - family-names: Alimardani
     given-names: Hosein
+    affiliation: "Faculty of Engineering, University of Tehran, Tehran, Iran"
   - family-names: Fakhroleslam
     given-names: Mohammad
+    affiliation: "Department of Chemical Engineering, Tarbiat Modares University, Tehran, Iran"
   - family-names: Eslami
     given-names: Fatemeh
+    affiliation: "Department of Chemical Engineering, Tarbiat Modares University, Tehran, Iran"
   - family-names: Asgari
     given-names: Mehrdad
+    affiliation: "Lucy Cavendish College, University of Cambridge, Cambridge CB3 0BU, United Kingdom"
 repository-code: "https://github.com/Asgari-research/mof-ml-benchmark-maturity"
+url: "https://github.com/Asgari-research/mof-ml-benchmark-maturity"
 license: MIT
 abstract: >-
-  Reproducible workflow and figure-level audit assets for studying when
-  conclusions from an ARC-MOF-derived adsorption machine-learning benchmark
-  become stable enough for a stated in-distribution use as training data are added.
+  Reproducibility release for benchmark maturity in MOF adsorption machine learning.
+  The archive contains the benchmark workflow, machine-readable publication outputs,
+  figure/table source data, and the processed ARC-MOF-derived benchmark input.
 keywords:
   - metal-organic frameworks
   - adsorption
@@ -27,3 +34,5 @@ keywords:
   - reproducibility
   - screening
   - materials informatics
+  - ARC-MOF
+# SOFTWARE_DOI_INSERTION_POINT

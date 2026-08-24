@@ -203,7 +203,7 @@ class ProjectConfig:
     # -------------------------------
     stability_top1_consensus_threshold: float = 0.80
     stability_rankcorr_threshold: float = 0.90
-    stability_topk_std_threshold: float = 0.05
+    stability_topk_std_threshold: float = 0.01
     stability_elite_std_threshold: float = 0.20
 
     # -------------------------------
